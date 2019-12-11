@@ -1,0 +1,21 @@
+### 配置项目启动端口号
+server:
+  port: 9999
+spring:
+  application:
+    name: itrip-eureka-server
+###配置eureka-server端的相关信息
+eureka:
+  ###配置eureka-server的ip地址
+  instance:
+    hostname: localhost
+  client:
+    ###不需要将本项目注册到注册中心，因此关闭
+    register-with-eureka: false
+    ###不需要去其他注册中心发现服务，因此关闭
+    fetch-registry: false
+    ###设置注册中心地址
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+
+

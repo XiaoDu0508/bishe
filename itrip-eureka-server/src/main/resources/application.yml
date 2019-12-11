@@ -1,0 +1,4 @@
+###设定启动文件的前缀
+spring:
+  profiles:
+    active: dev

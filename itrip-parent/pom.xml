@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                    http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>cn.ekgc.itrip</groupId>
+	<artifactId>itrip-parent</artifactId>
+	<version>3.1.0</version>
+	<packaging>pom</packaging>
+
+	<!--使用spring boot parent 作为整个项目的父级依赖关系 -->
+		<parent>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-parent</artifactId>
+			<version>2.1.10.RELEASE</version>
+		</parent>
+	<!--使用spring boot parent 作为整个项目的父级依赖关系 -->
+
+	<!--配置所有子模块共同的依赖关系 -->
+		<dependencies>
+			<!--配置spring boot web的依赖关系 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+			</dependency>
+			<!--配置spring boot web的依赖关系 -->
+
+			<!--配置spring boot 热部署的依赖关系 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-devtools</artifactId>
+			</dependency>
+			<!--配置spring boot 热部署的依赖关系 -->
+
+		</dependencies>
+	<!--配置所有子模块共同的依赖关系 -->
+
+	<dependencyManagement>
+		<dependencies>
+			<!--spring cloud 依赖关系 -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Greenwich.SR4</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!--spring cloud 依赖关系 -->
+
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<!--spring boot 打包插件 -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!--spring boot 打包插件 -->
+		</plugins>
+	</build>
+</project>
